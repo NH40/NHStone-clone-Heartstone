@@ -1,0 +1,39 @@
+.button {
+	@apply py-3 px-5 rounded-lg primary-gradient text-[#D06E14] font-bold text-xl transition-all duration-300 ease-in-out cursor-pointer;
+	box-shadow: -1px 3px 0 #b23909;
+
+	&:hover,
+	&.active {
+		@apply text-brown-500;
+		box-shadow: 0 2.5px 0 #b23909;
+	}
+
+	&.secondary {
+		@apply secondary-gradient text-[#ffb057];
+		box-shadow: -1px 3px 0 #642206;
+
+		&:hover,
+		&.active {
+			@apply text-yellow-500;
+			box-shadow: 0 2.5px 0 #642206;
+		}
+	}
+
+	&.gray {
+		@apply gray-gradient text-gray-700;
+		box-shadow: -1px 3px 0 #434343;
+
+		&:hover {
+			box-shadow: 0 2.5px 0 #434343;
+		}
+	}
+
+	&.disabled {
+		@apply grayscale cursor-not-allowed;
+		box-shadow: none;
+	}
+
+	&.circle {
+		@apply rounded-full py-3 px-3;
+	}
+}
