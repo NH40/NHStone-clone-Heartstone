@@ -22,7 +22,7 @@ export function GameBoard() {
 						typePlayer='opponent'
 					/>
 
-					<div className='-top-6 absolute w-full'>
+					<div className='-top-6 max-md:-top-12 absolute w-full'>
 						<div className='flex items-center justify-center'>
 							{opponent.deck
 								.filter(card => card.isOnHand)
@@ -65,7 +65,7 @@ export function GameBoard() {
 
 				<AudioPlayer />
 
-				<div className='-bottom-6 absolute w-full'>
+				<div className='-bottom-6 max-md:-bottom-8 absolute w-full'>
 					<div className='flex items-center justify-center'>
 						{player.deck
 							.filter(card => card.isOnHand)

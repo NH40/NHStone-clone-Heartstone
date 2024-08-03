@@ -3,7 +3,7 @@ import type { ICard } from '@/types/card.types'
 import cn from 'clsx'
 import { motion } from 'framer-motion'
 import { useState, type CSSProperties } from 'react'
-import { getStyleRotation } from './get-style-rotation'
+import { useGetStyleRotation } from './use-get-style-rotation'
 
 interface Props {
 	card: ICard
@@ -27,7 +27,11 @@ export function HandCard({
 	const { currentTurn, player } = useGameStore()
 	const [isHovered, setIsHovered] = useState(false)
 
-	const { rotate, translateY } = getStyleRotation(index, arrayLength, !isHided)
+	const { rotate, translateY } = useGetStyleRotation(
+		index,
+		arrayLength,
+		!isHided
+	)
 
 	const initialAnimation = {
 		scale: 1,
@@ -41,7 +45,7 @@ export function HandCard({
 	return (
 		<motion.button
 			className={cn(
-				'h-[8.5rem] w-24 inline-block rounded-lg will-change-transform relative border-2 border-transparent transition-colors',
+				'h-[8.5rem] w-24 max-md:h-[7rem] max-md:w-20 inline-block rounded-lg will-change-transform relative border-2 border-transparent transition-colors',
 				{
 					'shadow -ml-7': !isHided,
 					'-ml-[2.15rem]': isHided,

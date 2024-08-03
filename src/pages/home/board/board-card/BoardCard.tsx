@@ -7,7 +7,6 @@ import { motion } from 'framer-motion'
 import { DamageList } from '../DamageList'
 import { useEnemyTarget } from './useAnimeTarget'
 
-
 interface Props {
 	card: IGameCard
 	isPlayerSide: boolean
@@ -35,7 +34,7 @@ export function BoardCard({ card, isPlayerSide }: Props) {
 	return (
 		<motion.button
 			className={cn(
-				'h-[11.3rem] w-32 rounded-lg border-2 border-transparent border-solid transition-colors relative',
+				'h-[11.3rem] w-32 max-lg:w-24 max-lg:h-[8.4rem] max-md:!w-[4.5rem] max-md:!h-[6.3rem] rounded-lg border-2 border-transparent border-solid transition-colors relative',
 				{
 					'cursor-pointer !border-green-400 shadow-2xl':
 						card.isCanAttack &&

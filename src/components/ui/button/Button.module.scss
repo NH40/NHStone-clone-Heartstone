@@ -2,6 +2,14 @@
 	@apply py-3 px-5 rounded-lg primary-gradient text-[#D06E14] font-bold text-xl transition-all duration-300 ease-in-out cursor-pointer;
 	box-shadow: -1px 3px 0 #b23909;
 
+	@media (max-width: 992px) {
+		@apply text-lg py-2 px-4;
+	}
+
+	@media (max-width: 480px) {
+		@apply text-base py-1 px-3;
+	}
+
 	&:hover,
 	&.active {
 		@apply text-brown-500;

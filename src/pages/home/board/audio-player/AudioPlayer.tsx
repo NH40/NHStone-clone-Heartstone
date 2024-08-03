@@ -19,7 +19,7 @@ export function AudioPlayer() {
 
 	return (
 		<Button
-			className='absolute right-9 bottom-[4.5rem] z-10'
+			className='absolute right-9 bottom-[4.5rem] z-10 max-lg:right-4 max-lg:bottom-12 max-md:!right-2 max-md:!bottom-16'
 			variant='gray'
 			isCircle
 			onClick={handlePlayPause}

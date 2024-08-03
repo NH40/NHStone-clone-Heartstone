@@ -6,6 +6,13 @@ import { COLORS } from './src/constants/color.constants'
 export default {
 	content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
 	theme: {
+		screens: {
+			'max-xs': { max: '480px' },
+			'max-sm': { max: '768px' },
+			'max-md': { max: '992px' },
+			'max-lg': { max: '1200px' },
+			'max-xl': { max: '1399px' },
+		},
 		extend: {
 			colors: COLORS,
 		},

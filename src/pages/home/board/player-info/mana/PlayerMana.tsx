@@ -14,18 +14,30 @@ export function PlayerMana({ currentMana, maxMana, typePlayer }: Props) {
 
 	return (
 		<div
-			className={cn('flex items-center absolute', {
-				'right-9 bottom-7': isPlayer,
-				'left-8 top-7': !isPlayer,
+			className={cn('flex items-center absolute max-md:flex-col max-md:gap-2', {
+				'right-9 bottom-7 max-lg:right-4  max-lg:bottom-3 max-md:!right-2 max-md:!items-end ':
+					isPlayer,
+				'left-8 top-7  max-lg:left-3 max-lg:top-3 max-md:!left-2 max-md:!items-start ':
+					!isPlayer,
 			})}
 		>
-			<Badge value={currentMana} maxValue={maxMana} color='blue' />
-			<div className='flex items-center ml-2'>
+			<div
+				className={cn({
+					'max-md:order-2': !isPlayer,
+				})}
+			>
+				<Badge value={currentMana} maxValue={maxMana} color='blue' />
+			</div>
+			<div
+				className={cn('flex items-center ml-2 max-md:ml-0', {
+					'max-md:order-1': !isPlayer,
+				})}
+			>
 				{new Array(maxMana).fill(0).map((_, index) => (
 					<div
 						key={index}
 						className={cn(
-							'w-6 h-6 bg-gradient-to-t from-sky-900 rounded-full mx-1 shadow-inner',
+							'w-6 h-6 max-lg:w-4 max-lg:h-4 bg-gradient-to-t from-sky-900 rounded-full mx-1 shadow-inner',
 							index < currentMana ? 'to-sky-400' : 'to-sky-950'
 						)}
 					/>
